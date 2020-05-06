@@ -8,15 +8,13 @@ const app = express();
 
 app.use(express.static('build/public'));
 app.get('/', (req, res) => {
-    const content = renderToString(<Home/>);
-
     const html = `
         <html>
             <head>
-                <title>Home</title>
+                <title></title>
             </head>
             <body>
-                <div>${content}</div>
+                <div id="root"></div>
                 <script src="bundle.js"></script>
             </body>
         </html>
