@@ -4,10 +4,10 @@
   "description": "Server side rendering project",
   "main": "index.js",
   "scripts": {
-    "build:server:dev": "webpack --config webpack.server.js --watch",
-    "build:client:dev": "webpack --config webpack.client.js --watch",
-    "server:dev": "nodemon --watch build --exec node build/bundle.js",
-    "start:dev": "npm run build:server:dev && npm run build:client:dev && npm run server:dev"
+    "dev:build-server": "webpack --config webpack.server.js --watch",
+    "dev:build-client": "webpack --config webpack.client.js --watch",
+    "dev:server": "nodemon --watch build --exec node build/bundle.js",
+    "start:dev": "npm-run-all --parallel dev:*"
   },
   "author": "",
   "license": "ISC",
