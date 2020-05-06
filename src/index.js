@@ -5,8 +5,8 @@ import renderer from "./helpers/renderer";
 const app = express();
 
 app.use(express.static('build/public'));
-app.get('/', (req, res) => {
-    const html = renderer();
+app.get('*', (req, res) => {
+    const html = renderer(req);
 
     res.send(html);
 });
