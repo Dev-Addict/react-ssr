@@ -1,21 +1,12 @@
 import express from 'express';
-import React from 'react';
+
+import renderer from "./helpers/renderer";
 
 const app = express();
 
 app.use(express.static('build/public'));
 app.get('/', (req, res) => {
-    const html = `
-        <html>
-            <head>
-                <title></title>
-            </head>
-            <body>
-                <div id="root"></div>
-                <script src="bundle.js"></script>
-            </body>
-        </html>
-    `;
+    const html = renderer();
 
     res.send(html);
 });
