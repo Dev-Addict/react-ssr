@@ -14,7 +14,7 @@ class UsersPage extends Component {
     }
 
     renderUsers() {
-        return this.props.users.map(user => <li key={user.name}>{user.name}</li>)
+        return this.props.users.map(user => <li key={user.name}>{user.name}</li>);
     }
 
     render() {
