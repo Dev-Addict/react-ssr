@@ -1,4 +1,4 @@
-import {GET_USERS, GET_CURRENT_USER} from "./types";
+import {GET_USERS, GET_CURRENT_USER, GET_ADMINS} from "./types";
 
 export const getUsers = () => async (dispatch, getState, axiosInstance) => {
     const res = await axiosInstance.get('/users');
@@ -15,4 +15,12 @@ export const getCurrentUser = () => async (dispatch, getState, axiosInstance) =>
         type: GET_CURRENT_USER,
         payload: res
     })
+};
+
+export const getAdmins = () => async (dispatch, getState, axiosInstance) => {
+    const res = await axiosInstance.get('/admins');
+    dispatch({
+        type: GET_ADMINS,
+        payload: res
+    });
 };
