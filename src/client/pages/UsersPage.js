@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Helmet} from 'react-helmet';
 
 import {getUsers} from "../actions";
 
@@ -17,11 +18,23 @@ class UsersPage extends Component {
         return this.props.users.map(user => <li key={user.name}>{user.name}</li>);
     }
 
+    head() {
+        return (
+            <Helmet>
+                <title>Users App</title>
+                <meta property="og:title" content="Users App"/>
+            </Helmet>
+        );
+    }
+
     render() {
         return (
-            <ul>
-                {this.renderUsers()}
-            </ul>
+            <div>
+                {this.head()}
+                <ul>
+                    {this.renderUsers()}
+                </ul>
+            </div>
         );
     }
 }
