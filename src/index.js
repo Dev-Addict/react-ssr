@@ -16,10 +16,8 @@ app.get('*', (req, res) => {
         return route.loadData ? route.loadData(store) : null;
     });
 
-    const html = renderer(req, store);
-
     Promise.all(promises).then(() => {
-        res.send(html);
+        res.send(renderer(req, store));
     });
 });
 

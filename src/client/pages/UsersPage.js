@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {getUsers} from "../actions";
 
-class UsersList extends Component {
+class UsersPage extends Component {
     constructor(props) {
         super(props);
         this.renderUsers = this.renderUsers.bind(this);
@@ -36,4 +36,4 @@ export const loadData = store => {
     return store.dispatch(getUsers());
 };
 
-export default connect(mapStateToProps, {getUsers})(UsersList);
+export default connect(mapStateToProps, {getUsers})(UsersPage);
